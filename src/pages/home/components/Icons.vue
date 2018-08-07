@@ -19,6 +19,9 @@
 <script>
 export default{
 	name:'HomeIcons',
+	props:{
+		list:Array
+	},
 	data(){
 		return{
 			// swiperOption:{},
@@ -79,6 +82,7 @@ export default{
 }
 </script>
 <style lang="less" scoped>
+	@import '~styles/css.less';
 	// @import '~styles/varibles.styl'  
 	.icons{
 		height: 0;
@@ -106,7 +110,8 @@ export default{
 		.icon-desc{
 			// position: absolute;
 			// leng
-			white-space: nowrap;
+			.over;
+			// white-space: nowrap;
 			// text-
 		}
 	}

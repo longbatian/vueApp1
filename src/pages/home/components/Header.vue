@@ -2,13 +2,20 @@
 <div class="header">
 	<div class="header-left">返回</div>
 	<div class="header-input">内容</div>
-	<div class="header-right">城市</div>
+	<router-link to='./city'>
+		<div class="header-right">{{this.doubleCity}}</div>
+	</router-link>
+	
 </div>
 </template>
 <script>
-
+import {mapState,mapGetters} from 'vuex'
 export default{
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  computed:{
+  	...mapState(['city']),
+  	...mapGetters(['doubleCity'])
+  }
 }
 
 </script>
@@ -33,9 +40,12 @@ export default{
 			border-radius: .05rem;
 		}
 		.header-right{
-			width: .64rem;
+			min-width: .64rem;
+
 			float:right;
+			color:#fff;
 			text-align: center;
+			padding:0 .06rem;
 		}
 	
 	}
