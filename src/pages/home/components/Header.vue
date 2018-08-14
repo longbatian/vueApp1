@@ -3,18 +3,17 @@
 	<div class="header-left">返回</div>
 	<div class="header-input">内容</div>
 	<router-link to='./city'>
-		<div class="header-right">{{this.doubleCity}}</div>
+		<div class="header-right">{{this.city}}</div>
 	</router-link>
 	
 </div>
 </template>
 <script>
-import {mapState,mapGetters} from 'vuex'
+import {mapState} from 'vuex'
 export default{
   name: 'HomeHeader',
   computed:{
   	...mapState(['city']),
-  	...mapGetters(['doubleCity'])
   }
 }
 

@@ -11,8 +11,12 @@
 	
 </template>
 <script>
+import {mapState} from 'vuex'
 export default{
 	name:'HomeSwiper',
+	computed:{
+	  	...mapState(['city']),
+	 },
 	data(){
 		return{
 			swiperOption:{
