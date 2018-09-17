@@ -15,11 +15,44 @@ export default new Router({
     },{
       path: '/city',
       name: 'City',
-      component: City
+      component: City,
+      // meta:{
+      //   title:'this is city',
+      //   description:'asdas'
+      // },
+      // children:[
+      //   {
+      //     path:'test',
+      //     component:Home
+      //   }
+      // ]
     },{
       path: '/detail/:id',
       name: 'Detail',
-      component: Detail
+      component: Detail,
+      // children:[
+      //   {
+      //     path:'test',
+      //     component:Home
+      //   }
+      // ]
     }
-  ]
+  ],
+  scrollBehavior(to,from,savedPositon){
+    // return {x:0,y:0}
+    if(savedPositon){
+      return savedPositon
+    }else{
+      return {x:0,y:0}
+    }
+  },
+  mode:'history',
+  // parseQuery(query){
+
+  // },
+  // stringfyQuery(obj){
+
+  // }
+  fallback:true//history变成hashhistory
+
 })

@@ -5,7 +5,7 @@
 			class="item" v-for="item of letters" 
 			:key="item"
 			:ref="item"
-			@touchstart="hanleTouchStart"
+			@touchstart.prevent="hanleTouchStart"
 			@touchmove="hanleTouchMove"
 			@touchend="hanleTouchEnd"
 			>{{item}}</li>
